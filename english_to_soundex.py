@@ -4,7 +4,7 @@
 
 import sys
 
-__copyright__="""
+__copyright__= """
 The MIT License (MIT)
 
 Copyright (c) Benjamin S. Meyers <bsm9339@rit.edu>
