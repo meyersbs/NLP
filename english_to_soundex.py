@@ -1,10 +1,13 @@
 #!usr/bin/python
+# @AUTHOR: Benjamin S. Meyers
+# @DESCRIPTION: A simple function to translate an English string into soundex. https://en.wikipedia.org/wiki/Soundex
 
 import sys
 
 soundex_dict = {'B': '1', 'F': '1', 'P': '1', 'V': '1', 'C': '2', 'G': '2', 'J': '2', 'K': '2', 'Q': '2', 'S': '2', 'X': '2', 'Z': '2', 'D': '3', 'T': '3', 'L': '4', 'M': '5', 'N': '5', 'R': '6', 'A': '',  'E': '',  'I': '',  'O': '', 'U': '',  'H': '',  'W': '',  'Y': ''}
 
 def translate_to_soundex(name_string):
+    """ Translate a string of text to soundex. """
     global soundex_dict
     if len(name_string) == 0:
         return 'Found Empty String: No Translation Available.'
@@ -18,9 +21,6 @@ def translate_to_soundex(name_string):
         soundex_string += '0'*(3-length)
         
     return name_string[0] + soundex_string[:3]
-
-def translate_from_soundex(soundex_string):
-    return 'Feature Not Yet Implemented.'
                 
 def main():
     if len(sys.argv) == 2:
