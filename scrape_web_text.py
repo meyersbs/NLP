@@ -2,7 +2,31 @@
 # @AUTHOR: Benjamin S. Meyers
 # @DESCRIPTION: A simple function to copy an entire HTML file from a URL and then pull out all of the content text.
 
-import requests, re, sys, nltk, random, numpy
+__copyright__= """
+The MIT License (MIT)
+
+Copyright (c) Benjamin S. Meyers <bsm9339@rit.edu>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
+import requests, re, sys
 from bs4 import BeautifulSoup
 from nltk.probability import FreqDist
 
@@ -23,3 +47,11 @@ def get_text_from_url(url):
     plain_text = re.sub(r'  ', ' ', plain_text)
     
     return plain_text
+    
+def main():
+    url = sys.argv[1]
+    text = get_text_from_url(url)
+    print(text)
+    
+if __name__ == "__main__":
+    main()
