@@ -9,6 +9,7 @@
 import re, sys
 
 def file_to_hacker(input_file):
+    """ Open a text file and replace each line with hack3r text. """
     with open(input_file, 'r') as f:
         for line in f:
             temp_line = line.lower().strip('.,:;!?')
@@ -27,6 +28,7 @@ def file_to_hacker(input_file):
     
     
 def text_to_hacker(input_text):
+    """ Given a string, replace each line with hack3r text. """
     for line in input_text.split('\n'):
         temp_line = line.lower().strip('.,:;!?')
         temp_line = re.sub(r'\ss', ' $', temp_line)
